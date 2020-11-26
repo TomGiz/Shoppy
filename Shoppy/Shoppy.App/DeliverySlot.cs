@@ -5,6 +5,7 @@
     public class DeliverySlot
     {
         public DateTimeOffset Begin { get; set; }
+
         public DateTimeOffset End { get; set; }
     }
 }

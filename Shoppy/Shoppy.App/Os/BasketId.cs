@@ -2,8 +2,13 @@
 {
     using System;
 
-    public struct BasketId
+    public readonly struct BasketId
     {
-        public Guid Value { get; set; }
+        public BasketId(Guid value)
+        {
+            this.Value = value;
+        }
+
+        public Guid Value { get; }
     }
 }

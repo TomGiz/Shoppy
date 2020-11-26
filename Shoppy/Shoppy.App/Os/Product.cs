@@ -9,6 +9,5 @@
         public string Description { get; set; }
 
         public Money Price { get; set; }
-
     }
 }

@@ -1,7 +1,12 @@
 ﻿namespace Shoppy.App.Os
 {
-    public struct ProductId
+    public readonly struct ProductId
     {
-        public int Value { get; set; }
+        public ProductId(int value)
+        {
+            this.Value = value;
+        }
+
+        public int Value { get; }
     }
 }

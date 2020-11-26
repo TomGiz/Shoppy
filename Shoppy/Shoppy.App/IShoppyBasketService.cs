@@ -1,11 +1,9 @@
 ﻿namespace Shoppy.App
 {
-    using Shoppy.App.Os;
+    using System;
 
-    /// <summary>
-    /// Dit zorgt voor een shorthand notatie die handig is bij injectie.
-    /// </summary>
-    public interface IShoppyBasketService : IBasketService<ShoppyBasket, ShoppyBasketLine>
+    public interface IShoppyBasketService
     {
+        ShoppyBasket GetBasket(Guid id);
     }
 }

@@ -6,9 +6,11 @@
     /// </summary>
     public class Currency : Enumeration<CurrencyCode>
     {
-        public static readonly Currency Euro = new Currency(new CurrencyCode{Value = "EUR"}, "Euro");
-        public static readonly Currency UsDollar = new Currency(new CurrencyCode{Value = "USD"}, "US Dollar");
-        public static readonly Currency GreatBritishPound = new Currency(new CurrencyCode{Value = "GBP"}, "Pound sterling");
+        public static readonly Currency Euro = new Currency(new CurrencyCode { Value = "EUR" }, "Euro");
+
+        public static readonly Currency UsDollar = new Currency(new CurrencyCode { Value = "USD" }, "US Dollar");
+
+        public static readonly Currency GreatBritishPound = new Currency(new CurrencyCode { Value = "GBP" }, "Pound sterling");
 
         /// <inheritdoc />
         private Currency(CurrencyCode id, string name)

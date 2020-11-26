@@ -8,7 +8,7 @@
             this.Amount = amount;
         }
 
-        public Currency Currency { get;  }
+        public Currency Currency { get; }
 
         public decimal Amount { get; }
     }
