@@ -1,9 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Shoppy.App
+﻿namespace Shoppy.App.Os
 {
+    using System;
+    using System.Collections.Generic;
     using System.Linq;
     using System.Reflection;
 
@@ -16,11 +14,11 @@ namespace Shoppy.App
 
         protected Enumeration(TKey id, string name)
         {
-            Id = id;
-            Name = name;
+            this.Id = id;
+            this.Name = name;
         }
 
-        public override string ToString() => Name;
+        public override string ToString() => this.Name;
 
         public static IEnumerable<T> GetAll<T>() where T : Enumeration<TKey>
         {
@@ -38,8 +36,8 @@ namespace Shoppy.App
             if (otherValue == null)
                 return false;
 
-            var typeMatches = GetType().Equals(obj.GetType());
-            var valueMatches = Id.Equals(otherValue.Id);
+            var typeMatches = this.GetType().Equals(obj.GetType());
+            var valueMatches = this.Id.Equals(otherValue.Id);
 
             return typeMatches && valueMatches;
         }

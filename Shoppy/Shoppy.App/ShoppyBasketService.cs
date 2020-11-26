@@ -1,25 +1,6 @@
 ﻿namespace Shoppy.App
 {
-    using System.Collections.Generic;
     using Shoppy.App.Os;
-
-
-    /// <summary>
-    /// Dit zorgt voor een shorthand notatie die handig is bij injectie.
-    /// </summary>
-    public interface IShoppyBasketService : IBasketService<ShoppyBasket, ShoppyBasketLine>
-    {
-    }
-
-    public interface IReviewService
-    {
-        IEnumerable<ProductReview> GetProductReview(ProductId productId);
-    }
-
-    public interface IDeliveryPlanningService
-    {
-        DeliverySlot GetChosenDeliverySlot(BasketId basketId);
-    }
 
     public class ShoppyBasketService : IShoppyBasketService
     {
@@ -47,34 +28,6 @@
             }
 
             return basket;
-        }
-    }
-
-    /// <summary>
-    /// Dit zorgt voor een shorthand notatie die handig is bij injectie.
-    /// </summary>
-    public interface IShoppyProductService : IProductService<ShoppyProduct>
-    {
-
-    }
-
-    public class ShoppyProductService : IShoppyProductService
-    {
-        private readonly IShoppyProductService productService;
-        private readonly IReviewService reviewService;
-
-        public ShoppyProductService(IShoppyProductService productService, IReviewService reviewService)
-        {
-            this.productService = productService;
-            this.reviewService = reviewService;
-        }
-
-        /// <inheritdoc />
-        public ShoppyProduct GetProduct(ProductId id)
-        {
-            var product = this.productService.GetProduct(id);
-            product.Reviews = this.reviewService.GetProductReview(id);
-            return product;
         }
     }
 }
